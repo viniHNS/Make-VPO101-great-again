@@ -5,13 +5,13 @@ import { IPreSptLoadMod } from "@spt/models/external/IPreSptLoadMod";
 import { ILogger } from "@spt/models/spt/utils/ILogger";
 import { LogTextColor } from "@spt/models/spt/logging/LogTextColor";
 
-class Mod implements IPostDBLoadMod, IPreAkiLoadMod
+class Mod implements IPostDBLoadMod, IPreSptLoadMod
 {
-    preAkiLoad(container: DependencyContainer): void 
+    preSptLoad(container: DependencyContainer): void 
     {
         // get the logger from the server container
         const logger = container.resolve<ILogger>("WinstonLogger");
-        logger.logWithColor("Making the VPO-101 great again!", LogTextColor.GREEN);
+        logger.logWithColor("[ViniHNS] Making the VPO-101 great again!", LogTextColor.GREEN);
     }
 
     public postDBLoad(container: DependencyContainer): void 
