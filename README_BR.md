@@ -10,11 +10,16 @@ Este é um mod para o [SPT-AKI](https://www.sp-tarkov.com "O principal objetivo 
 A VPO-101 é uma ótima arma, mas tem alguns problemas. Este mod visa corrigi-los, como:
 
 - Agora você pode usar supressores, quebras-chamas e compensadores de armas 7.62x51mm
+- Ajustada a ergonomia da arma (um pouco)
 
 ## Instalação
 
+1.  Baixe o arquivo `makevpo101greatagain.zip` da página de releases.
+2.  Arraste e solte o arquivo `.zip` diretamente na pasta raiz da sua instalação do SPT (a pasta que contém o `Aki.Server.exe`).
+3.  Clique com o botão direito no arquivo `.zip` e selecione **"Extrair Aqui"**.
+4.  As pastas devem se mesclar automaticamente. Se aparecer uma mensagem pedindo para substituir arquivos, confirme.
 
-Basta colocar a pasta `user` no diretório de instalação do seu jogo `SPT`.
+Pronto! O mod será instalado corretamente na pasta `SPT/user/mods/`.
 
 ## Licença
 

@@ -14,7 +14,10 @@ The VPO-101 is a great weapon, but it has some flaws. This mod aims to fix them
 
 ## Installation
 
-Just drop the `user` folder into your `SPT` directory.
+1.  Download the `makevpo101greatagain.zip`.
+2.  Drag and drop the `.zip` file directly into the root folder of your SPT installation.
+3.  Right-click the `.zip` file and select **"Extract Here"**.
+4.  The folders should merge automatically. If you get a prompt to overwrite files, say yes.
 
 ## License
 
