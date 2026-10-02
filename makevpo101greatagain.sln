@@ -1,6 +1,9 @@
-﻿
+
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "makevpo101greatagain", "makevpo101greatagain.csproj", "{8D810AAF-0600-486C-9B53-1F3933CBB6A4}"
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "makevpo101greatagain.Server", "Server\makevpo101greatagain.csproj", "{8D810AAF-0600-486C-9B53-1F3933CBB6A4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

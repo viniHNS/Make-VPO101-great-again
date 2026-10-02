@@ -1,26 +1,111 @@
+<div align="center">
+
 # Make VPO-101 Great Again!
 
-#### [EN](README.md) | [PT_BR](README_BR.md)
-## O que é isso? 
+Um mod de server para o SPT 4.1.6 que libera muzzle devices e supressores de 7.62x51 na VPO-101 Vepr-Hunter, para ela competir com os outros rifles do mesmo calibre.
 
-Este é um mod para o [SPT-AKI](https://www.sp-tarkov.com "O principal objetivo do projeto é fornecer uma experiência singleplayer offline separada com progressão pronta para uso para o cliente oficial da BSG. Agora você pode jogar Escape From Tarkov enquanto espera que seus servidores voltem a ficar online, enquanto você está desconectado da Internet ou se precisar fazer uma pausa dos trapaceiros.") que faz a VPO-101 competitiva contra os rifles da sua categoria!
+![Version](https://img.shields.io/badge/version-1.5.0-orange?style=flat)
+![SPT](https://img.shields.io/badge/SPT-4.1.6-blue?style=flat)
+![.NET](https://img.shields.io/badge/.NET-10-512BD4?style=flat&logo=dotnet)
+![License](https://img.shields.io/badge/license-MIT-green?style=flat)
 
-## O que este mod faz?
+[Funcionalidades](#funcionalidades) · [Instalação](#instalação) · [Muzzle devices](#muzzle-devices) · [Build](#build-a-partir-do-código)
 
-A VPO-101 é uma ótima arma, mas tem alguns problemas. Este mod visa corrigi-los, como:
+[English](README.md) · **Português**
 
-- Agora você pode usar supressores, quebras-chamas e compensadores de armas 7.62x51mm
-- Ajustada a ergonomia da arma (um pouco)
+</div>
+
+---
+
+## Funcionalidades
+
+| Alteração | Jogo | Mod |
+|---|---|---|
+| Slot de muzzle | Peças da VPO-101 | + 23 quebra-chamas, freios de boca, adaptadores e um supressor de AR-10 / 7.62x51 |
+| Ergonomia | 29 | 30 |
+
+Os adaptadores Gemtech ONE, SilencerCo Hybrid 46 e SIG Taper-LOK abrem caminho para os supressores que encaixam neles.
+
+---
 
 ## Instalação
 
-1.  Baixe o arquivo `makevpo101greatagain.zip` da página de releases.
-2.  Arraste e solte o arquivo `.zip` diretamente na pasta raiz da sua instalação do SPT (a pasta que contém o `Aki.Server.exe`).
-3.  Clique com o botão direito no arquivo `.zip` e selecione **"Extrair Aqui"**.
-4.  As pastas devem se mesclar automaticamente. Se aparecer uma mensagem pedindo para substituir arquivos, confirme.
+Extraia o `makevpo101greatagain.zip` na pasta do jogo SPT:
 
-Pronto! O mod será instalado corretamente na pasta `SPT/user/mods/`.
+```
+<pasta do jogo>/
+└── SPT_Runtime/user/mods/makevpo101greatagain/
+    └── makevpo101greatagain.dll
+```
 
-## Licença
+Só server, não precisa de plugin no client.
 
-Este mod está licenciado sob a [Licença MIT](LICENSE).
+---
+
+## Muzzle devices
+
+<details>
+<summary>Os 23 itens adicionados ao slot de muzzle da VPO-101</summary>
+
+| Item | Tipo |
+|---|---|
+| AR-10 AAC Blackout 51T flash hider | Quebra-chamas |
+| AR-10 KAC QDC Flash Suppressor Kit | Quebra-chamas |
+| AR-10 KAC QDC Muzzle Brake Kit | Freio de boca |
+| AR-10 Dead Air Keymount muzzle brake | Freio de boca |
+| AR-10 TAA ZK-38 muzzle brake | Freio de boca |
+| AR-10 AWC PSR muzzle brake | Freio de boca |
+| AR-10 SureFire Warden blast regulator | Regulador de blast |
+| AR-10 SureFire ProComp muzzle brake | Freio de boca |
+| AR-10 CMMG SV Brake muzzle brake | Freio de boca |
+| AR-10 Lantac Dragon muzzle brake-compensator | Freio de boca |
+| AR-10 Odin Works ATLAS-7 muzzle brake | Freio de boca |
+| AR-10 2A Armanent X3 compensator | Compensador |
+| AR-10 Fortis RED Brake muzzle brake | Freio de boca |
+| AR-10 Keeno Arms SHREWD muzzle brake | Freio de boca |
+| AR-10 Precision Armanent M11 Severe-Duty muzzle brake | Freio de boca |
+| AR-10 Nordic Components Corvette compensator | Compensador |
+| AR-10 Daniel Defense WAVE muzzle brake | Freio de boca |
+| AR-10 Thunder Beast Arms 30CB muzzle brake | Freio de boca |
+| Lantac BMD Blast Mitigation Device | Regulador de blast |
+| Gemtech ONE Direct Thread Mount adapter | Adaptador de supressor |
+| SilencerCo Hybrid 46 Direct Thread Mount adapter | Adaptador de supressor |
+| SIG Sauer Taper-LOK 7.62x51/.300 BLK muzzle adapter | Adaptador de supressor |
+| SIG Sauer SRD762Ti 7.62x51 sound suppressor | Supressor |
+
+</details>
+
+---
+
+## Build a partir do código
+
+**Requisitos:** .NET 10 SDK.
+
+```sh
+dotnet build makevpo101greatagain.sln -c Release
+```
+
+O build gera o `makevpo101greatagain.zip` na pasta da solution.
+
+> O `.csproj` copia o build para `D:\Jogos\SPT4.1` para teste, quando essa pasta existe. Troque o `SptModsDir` pela sua pasta do SPT. Feche o server do SPT antes de compilar, senão a cópia falha porque a DLL está em uso.
+
+### Estrutura do projeto
+
+```
+Make-VPO101-great-again/
+├── makevpo101greatagain.sln
+└── Server/                         server mod .NET 10
+    ├── Mod.cs                      metadata do mod
+    └── Vpo101Changes.cs            alterações no slot de muzzle e na ergonomia
+```
+
+---
+
+## Recursos
+
+| Recurso | URL |
+|---|---|
+| SPT Server C# | https://github.com/SP-Tushonka/server-csharp |
+| Exemplos de server mod | https://github.com/SP-Tushonka/server-mod-examples |
+| SPT Wiki — Modding Resources | https://wiki.sp-tushonka.com/en/modding/Modding_Resources |
+| SPT Scaffold | https://github.com/viniHNS/spt-scaffold |
